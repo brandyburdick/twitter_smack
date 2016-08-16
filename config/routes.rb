@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
   
+  get 'epicenter/feed'
+
+  get 'epicenter/show_user'
+
+  get 'epicenter/now_following'
+
+  get 'epicenter/unfollow'
+
   root 'tweets#index'
 
   resources :tweets
