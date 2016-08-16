@@ -5,4 +5,10 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :tweets
+
+  before_create :prepend_at_symbol
+
+ 	def prepend_at_symbol
+  	self.username.prepend("@")
+ 	end
 end
