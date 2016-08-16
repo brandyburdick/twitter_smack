@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'paperclip'
+gem 'devise'
 gem 'awesome_print'
 gem 'bootstrap-sass'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
