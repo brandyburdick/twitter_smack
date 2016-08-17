@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'jquery-turbolinks'
 gem 'paperclip'
 gem 'devise'
 gem 'awesome_print'
