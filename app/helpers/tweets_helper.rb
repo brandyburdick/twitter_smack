@@ -14,7 +14,7 @@ module TweetsHelper
         message_arr[index] = word
       end
     end
-    tweet.update(message: message_arr.join(" "))
+    tweet.update(display: message_arr.join(" "))
     tweet
   end
 
@@ -35,7 +35,7 @@ module TweetsHelper
         message_arr[index] = word
       end
     end
-    tweet.update(message: message_arr.join(" "))
+    tweet.update(display: message_arr.join(" "))
     tweet
   end
 end
