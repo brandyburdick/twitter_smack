@@ -2,28 +2,34 @@
 
 <h1>Listing Tweets</h1>
 
-<table class="table">
-  <thead>
-    <tr>
-      <th>Message</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @tweets.each do |tweet| %>
-      <tr>
-        <td><%= tweet.display.html_safe %></td>
-        <td><%= link_to tweet.user.username, show_user_path(id: tweet.user.id) %></td>
-        <td><%= link_to 'Show', tweet %></td>
-        <td><%= link_to 'Edit', edit_tweet_path(tweet) %></td>
-        <td><%= link_to 'Destroy', tweet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
+<% @tweets.each do |tweet| %>
+<div class="row">
+  <div class="col-md-12">
+    <div class = "panel panel-default">
+      <div class="panel-heading">
+        <div class="row"> 
+          <div class="col-md-8 pull-left">
+            <h2 class="panel-title">
+              <%= link_to tweet.user.username, show_user_path(id: tweet.user.id) %>
+            </h2>
+          </div>
+          <div class="col-md-4">
+            <% if current_user.id == tweet.user_id %>
+              <%= link_to 'Edit', edit_tweet_path(tweet), class: "btn btn-primary btn-xs pull-right" %>
+              <%= link_to 'Delete', tweet, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-xs pull-right" %>
+            <% end %>
+          </div>
+        </div>   
+      </div>
+      <div class="panel-body">
+        <%= tweet.display.html_safe %>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>
 <br>
 
 <%= link_to 'New Tweet', new_tweet_path %>

@@ -28,7 +28,7 @@ module TweetsHelper
           tag = Tag.create(phrase: word)
         end
         if TweetTag.find_by(tweet_id: tweet.id, tag_id: tag.id) == nil
-          TweetTag.creat(tweet_id: tweet.id, tag_id: tag.id)
+          TweetTag.create(tweet_id: tweet.id, tag_id: tag.id)
         end
         message_arr[index] = "<a href='/tag_tweets?id=#{tag.id}'>#{word}</a>"
       else
