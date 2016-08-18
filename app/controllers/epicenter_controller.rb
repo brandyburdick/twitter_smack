@@ -29,4 +29,8 @@ class EpicenterController < ApplicationController
     current_user.following.delete(params[:id].to_i)
     current_user.save
   end
+
+  def tag_tweets
+    @tag = Tag.find(params[:id])
+  end
 end

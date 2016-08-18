@@ -16,3 +16,13 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+
+.well-outer-box {
+	background: rgba(122, 153, 220, 0.5);
+}
+
+/*remove underline from hashtag & username links */
+.well p > a {
+	text-decoration: none;
+}
