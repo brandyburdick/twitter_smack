@@ -8,7 +8,7 @@
         <%= link_to "<span class='h4'>#{tweet.user.name}</span>(#{tweet.user.username})".html_safe, show_user_path(id: tweet.user.id) %> &#8226; <span><%= time_ago_in_words(tweet.created_at) %> ago</span>
       </p>
       <p class="well well-inner-box">
-        <%= tweet.message.html_safe %>
+        <%= tweet.display.html_safe %>
       </p>
     </div>
   </div>
